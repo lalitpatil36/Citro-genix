@@ -1,0 +1,171 @@
+.container {
+  margin-top: 2rem;
+  border-top: 4px solid var(--accent-primary);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.icon {
+  color: var(--accent-primary);
+}
+.subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.toggleBtn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--panel-border);
+  color: var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.toggleBtn:hover {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.active {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.chartContainer {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+.d3Chart {
+  width: 100%;
+  min-width: 600px;
+  height: 400px;
+}
+
+.sourceLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+.sourceLinks a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--accent-primary);
+  background: rgba(88, 166, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+.sourceLinks a:hover {
+  background: rgba(88, 166, 255, 0.2);
+}
+
+.threatMatrix {
+  animation: fadeIn 0.5s ease;
+}
+.threatTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ctv-red);
+  margin-bottom: 0.5rem;
+}
+.threatSubtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.threatCard {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s;
+}
+.threatCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.2);
+}
+.threatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.threatHeader h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+.cropTag {
+  background: rgba(63, 185, 80, 0.15);
+  color: var(--ctv-green);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.primaryThreat {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.diseaseName {
+  color: var(--ctv-red);
+  font-weight: 600;
+}
+.impact {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.advice {
+  background: rgba(88, 166, 255, 0.05);
+  border-left: 3px solid var(--accent-primary);
+  padding: 0.75rem;
+  font-size: 0.85rem;
+  color: #ddd;
+  line-height: 1.4;
+}
+.advice strong {
+  display: block;
+  color: var(--accent-primary);
+  margin-bottom: 0.25rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

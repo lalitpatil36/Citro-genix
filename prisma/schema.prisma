@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Disease {
+  id           String    @id @default(uuid())
+  name         String    @unique
+  pathogen     String
+  symptoms     String
+  transmission String
+  management   String
+  isolates     Isolate[]
+}
+
+model Rootstock {
+  id              String  @id @default(uuid())
+  name            String  @unique
+  origin          String?
+  ctvTolerance    String  // Tolerant, Susceptible, Resistant
+  soilPreference  String?
+  recommendations String?
+}
+
+model Genotype {
+  id          String    @id @default(uuid())
+  name        String    @unique // e.g., T36, VT, T3, T68
+  description String?
+  isolates    Isolate[]
+}
+
+model Isolate {
+  id         String   @id @default(uuid())
+  name       String   @unique // e.g., Kpg3, Kpg5, HA16-5
+  region     String
+  country    String
+  diseaseId  String
+  genotypeId String
+  sequence   String?  // FASTA sequence or reference
+  length     Int      // e.g., 19300
+  disease    Disease  @relation(fields: [diseaseId], references: [id])
+  genotype   Genotype @relation(fields: [genotypeId], references: [id])
+  orfs       Orf[]
+}
+
+model Orf {
+  id        String  @id @default(uuid())
+  isolateId String
+  name      String  // e.g., p25, p23, p20, p27
+  function  String
+  startPos  Int
+  endPos    Int
+  alignment String  // 'top', 'bottom', 'center', 'stack'
+  topLabel  String? // '1B', '2', etc.
+  color     String?
+  isolate   Isolate @relation(fields: [isolateId], references: [id])
+}
+
+model ResearchPaper {
+  id               String  @id @default(uuid())
+  title            String
+  authors          String
+  publicationYear  Int
+  journal          String
+  abstract         String
+  genotypesStudied String? // Comma separated for filtering
+  regionFocus      String?
+  doi              String?
+}

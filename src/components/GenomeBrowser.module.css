@@ -1,0 +1,54 @@
+.orfTrack {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.orfTrack:hover {
+  filter: brightness(1.2);
+}
+.browserContainer {
+  margin: 20px 0;
+  width: 100%;
+  overflow-x: auto;
+}
+.infoPanel {
+  min-height: 100px;
+  padding: 15px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-primary);
+}
+.meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+.panelContainer {
+  margin-top: 2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.simBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.simBtn:hover {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}

@@ -1,0 +1,220 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roleToggle {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+  background: rgba(0,0,0,0.4);
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--panel-border);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 12px 24px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.toggleBtn:hover {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+
+.activeScientist {
+  background: rgba(88, 166, 255, 0.15);
+  border-color: rgba(88, 166, 255, 0.4);
+  color: #58a6ff;
+}
+
+.activeFarmer {
+  background: rgba(63, 185, 80, 0.15);
+  border-color: rgba(63, 185, 80, 0.4);
+  color: #3fb950;
+}
+
+.translateBanner {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.translateBox {
+  background: rgba(255, 170, 0, 0.1);
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.mainGrid {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.visualizerSection {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.ictvLink, .recentPapers {
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+.ictvLink h2, .recentPapers h2 {
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.resourceCard {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  position: relative;
+}
+.resourceCard:hover {
+  background: rgba(88, 166, 255, 0.05);
+  border-color: var(--accent-primary);
+}
+.resourceCard h4 {
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+.resourceCard p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.externalIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--text-secondary);
+}
+
+.recentPapers ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.recentPapers h4 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+.authors {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.tag {
+  display: inline-block;
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent-primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.farmerHero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+.farmerHeroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  z-index: 0;
+}
+.farmerHeroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(5, 9, 20, 0.95) 0%, rgba(5, 9, 20, 0.2) 100%);
+  z-index: 1;
+}
+.farmerHeroContent {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+.farmerHeroContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  color: #fff;
+}
+.farmerHeroContent p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+}

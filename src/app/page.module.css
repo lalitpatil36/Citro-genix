@@ -1,0 +1,141 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+.titleArea {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.logoIcon {
+  color: var(--ctv-green);
+  filter: drop-shadow(0 0 10px rgba(63, 185, 80, 0.4));
+}
+.header h1 {
+  font-size: 2.5rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2rem;
+}
+.header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.statsGrid .glass-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.statsGrid .glass-panel:hover {
+  transform: translateY(-5px);
+}
+.statIcon {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+}
+.statsGrid h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.statsGrid p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.mainGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+.recentPapers ul {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+.recentPapers li {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--panel-border);
+}
+.recentPapers li:last-child {
+  border-bottom: none;
+}
+.recentPapers h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+.authors {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent-primary);
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.ictvLink {
+  margin-bottom: 2rem;
+}
+.ictvLink h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.resourceCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+.resourceCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+.resourceCard h4 {
+  color: var(--accent-primary);
+  margin-bottom: 0.25rem;
+}
+.resourceCard p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.externalIcon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+.resourceCard:hover .externalIcon {
+  opacity: 1;
+  color: var(--accent-primary);
+}
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}

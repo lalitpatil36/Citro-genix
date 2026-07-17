@@ -1,0 +1,219 @@
+.container {
+  margin-top: 2rem;
+  border-top: 4px solid var(--ctv-green);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.icon {
+  color: var(--ctv-green);
+}
+.subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.stepWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.stepCard {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--panel-border);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.stepCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--ctv-green);
+  background: rgba(63, 185, 80, 0.05);
+}
+.activeStepCard {
+  border-color: var(--ctv-green);
+  background: rgba(63, 185, 80, 0.1);
+  box-shadow: 0 0 15px rgba(63, 185, 80, 0.2);
+}
+.stepIcon {
+  color: var(--ctv-green);
+  margin-bottom: 1rem;
+}
+.stepCard h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.stepCard p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.arrow {
+  color: var(--text-secondary);
+  margin: 0 1rem;
+  flex-shrink: 0;
+}
+.stepDetailsPanel {
+  background: rgba(63, 185, 80, 0.05);
+  border-left: 4px solid var(--ctv-green);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  position: relative;
+  animation: slideDown 0.3s ease-out forwards;
+}
+.stepDetailsPanel h3 {
+  color: var(--ctv-green);
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+.stepDetailsPanel p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.closeBtn:hover {
+  color: #fff;
+}
+.policyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.policyCard {
+  background: rgba(0,0,0,0.3);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.policyCard h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+.policyCard p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.crossProtectionPanel {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-primary);
+}
+.crossProtectionPanel h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent-primary);
+}
+.strainButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.strainBtn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--panel-border);
+  color: var(--text-primary);
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.strainBtn:hover {
+  background: rgba(255,255,255,0.1);
+}
+.activeMild {
+  background: var(--ctv-green);
+  border-color: var(--ctv-green);
+}
+.activeSevere {
+  background: var(--ctv-red);
+  border-color: var(--ctv-red);
+}
+.strainInfoBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  animation: slideDown 0.3s ease;
+}
+.strainInfoBox h4 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+.strainInfoBox h4 span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+.strainInfoBox p {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1024px) {
+  .pipeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .stepWrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+  .stepCard {
+    width: 100%;
+  }
+  .policyGrid {
+    grid-template-columns: 1fr;
+  }
+}

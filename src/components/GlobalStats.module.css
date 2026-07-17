@@ -1,0 +1,122 @@
+.containerWrapper {
+  margin-bottom: 2rem;
+  animation: slideDown 0.6s ease-out forwards;
+}
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.statCard {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+.statCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-primary);
+  background: rgba(88, 166, 255, 0.05);
+}
+.activeCard {
+  border-color: var(--accent-primary);
+  background: rgba(88, 166, 255, 0.1);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+.iconWrapper {
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent-primary);
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.statInfo h4 {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.subtext {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+.expandedPanel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  position: relative;
+  animation: slideDown 0.3s ease-out forwards;
+  border-left: 4px solid var(--accent-primary);
+}
+.expandedPanel h3 {
+  color: var(--accent-primary);
+  margin-bottom: 0.8rem;
+}
+.expandedPanel p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.closeBtn:hover {
+  color: #fff;
+}
+.infoList {
+  list-style: disc;
+  margin-left: 1.5rem;
+  color: #ddd;
+}
+.infoList li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.gridList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.gridList ul {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+.gridList li {
+  color: #ccc;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid rgba(255,255,255,0.1);
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
