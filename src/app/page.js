@@ -1,22 +1,20 @@
 import { Leaf } from 'lucide-react';
 import DashboardClient from './DashboardClient';
 import styles from './page.module.css';
+import { db } from '@/lib/db';
 
 async function getDashboardData() {
-  return {
-    stats: {
-      totalDiseases: 6,
-      totalRootstocks: 12,
-      totalGenotypes: 8,
-      totalIsolates: 145,
-      totalPapers: 84
-    },
-    recentPapers: [
-      { id: 'mock1', title: 'Global spread and genomic analysis of severe Citrus Tristeza Virus strains', authors: 'Dawson et al.', publicationYear: 2023, genotypesStudied: 'VT, T36, T30' },
-      { id: 'mock2', title: 'Hyperspectral imaging for early asymptomatic detection of HLB', authors: 'Li, X. et al.', publicationYear: 2024, genotypesStudied: 'General' },
-      { id: 'mock3', title: 'Cross-protection efficacy of mild CTV isolates in commercial orchards', authors: 'Moreno, P. et al.', publicationYear: 2022, genotypesStudied: 'Mild Strains' }
-    ]
+  const stats = {
+    totalDiseases: await db.disease.count(),
+    totalRootstocks: await db.rootstock.count(),
+    totalGenotypes: await db.genotype.count(),
+    totalIsolates: await db.isolate.count(),
+    totalPapers: await db.researchPaper.count(),
   };
+
+  const recentPapers = await db.researchPaper.findMany();
+
+  return { stats, recentPapers };
 }
 
 export default async function Home() {

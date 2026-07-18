@@ -1,28 +1,12 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { db } from '@/lib/db';
 
 export async function GET(request) {
-  const { searchParams } = new URL(request.url);
-  const isolateName = searchParams.get('isolate');
-
   try {
-    if (isolateName) {
-      const isolate = await prisma.isolate.findUnique({
-        where: { name: isolateName },
-        include: { orfs: true, genotype: true }
-      });
-      if (!isolate) return NextResponse.json({ error: 'Isolate not found' }, { status: 404 });
-      return NextResponse.json(isolate);
-    }
-
-    // Default to a known isolate for demo purposes
-    const isolate = await prisma.isolate.findFirst({
-      where: { name: 'Kpg5' },
-      include: { orfs: true, genotype: true }
-    });
-    
-    return NextResponse.json(isolate);
+    const genome = await db.genome.getCTVMock();
+    return NextResponse.json(genome);
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch genome data' }, { status: 500 });
+    console.error(error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
